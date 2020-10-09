@@ -1,6 +1,8 @@
 defmodule EctoMorph.MixProject do
   use Mix.Project
 
+  @source_url "https://github.com/Adzz/ecto_morph"
+
   def project do
     [
       name: "EctoMorph",
@@ -10,8 +12,8 @@ defmodule EctoMorph.MixProject do
       package: package(),
       elixir: "~> 1.9",
       start_permanent: Mix.env() == :prod,
-      source_url: "https://github.com/Adzz/ecto_morph",
-      deps: deps()
+      deps: deps(),
+      docs: docs()
     ]
   end
 
@@ -29,7 +31,17 @@ defmodule EctoMorph.MixProject do
   defp package() do
     [
       licenses: ["Apache 2.0"],
-      links: %{"GitHub" => "https://github.com/Adzz/ecto_morph"}
+      links: %{"GitHub" => @source_url}
+    ]
+  end
+
+  defp docs do
+    [
+      main: "readme",
+      source_url: @source_url,
+      extras: [
+        "README.md"
+      ]
     ]
   end
 end
